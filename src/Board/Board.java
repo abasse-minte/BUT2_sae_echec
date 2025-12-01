@@ -20,4 +20,8 @@ public class Board {
         }
     }
 
+    public void setPiece(String position, IPiece piece){
+        board.put(position, piece);
+    }
+
 }
