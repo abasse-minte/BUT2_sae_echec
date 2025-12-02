@@ -2,7 +2,7 @@ package src.Piece;
 
 import java.util.*;
 
-public class King implements IPiece{
+public class King extends Piece {
 
     public String nom;
     public String position;
@@ -10,34 +10,7 @@ public class King implements IPiece{
 
 
     public King(String position, String color){
-        this.nom = "king";
-        this.position = position;
-        this.color = color;
-    }
-
-    @Override
-    public String getPosition(){
-        return position;
-    }
-
-    @Override
-    public String getNom(){
-        return nom;
-    }
-
-    @Override
-    public String getColor(){
-        return color;
-    }
-
-    @Override
-    public void setPosition(String position){
-        this.position = position;
-    }
-
-    @Override
-    public boolean sameColor(String color){
-        return this.color.equals(color);
+        super("king",position,color);
     }
 
 

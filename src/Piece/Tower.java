@@ -2,43 +2,16 @@ package src.Piece;
 
 import java.util.*;
 
-public class Tower implements IPiece{
+public class Tower extends Piece{
 
     public String nom;
     public String position;
     public String color;
 
 
-    public Tower(String position){
-        this.nom = "tower";
-        this.position = position;
+    public Tower(String position, String color){
+        super("rook",position,color);
     }
-
-    @Override
-    public String getPosition(){
-        return position;
-    }
-
-    @Override
-    public String getNom(){
-        return nom;
-    }
-
-    @Override
-    public String getColor(){
-        return color;
-    }
-
-    @Override
-    public boolean sameColor(String color){
-        return this.color.equals(color);
-    }
-
-    @Override
-    public void setPosition(String position){
-        this.position = position;
-    }
-
 
     @Override
     public List<String> getMove(Map<String, IPiece> board) {
