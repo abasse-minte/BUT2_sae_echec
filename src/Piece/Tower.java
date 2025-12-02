@@ -26,7 +26,9 @@ public class Tower extends Piece{
             if (!board.containsKey(newPos)) {
                 movePossible.add(newPos);
             } else {
-                movePossible.add(newPos);   // capture possible
+                if(board.get(newPos).getColor().equals(this.getColor())){
+                    movePossible.add(newPos); // capture possible si c'est une piece de couleur differnt
+                }
                 break;                      // stoppe le rayon
             }
         }
@@ -38,7 +40,9 @@ public class Tower extends Piece{
             if (!board.containsKey(newPos)) {
                 movePossible.add(newPos);
             } else {
-                movePossible.add(newPos);
+                if(board.get(newPos).getColor().equals(this.getColor())){
+                    movePossible.add(newPos);
+                }
                 break;
             }
         }
@@ -50,7 +54,9 @@ public class Tower extends Piece{
             if (!board.containsKey(newPos)) {
                 movePossible.add(newPos);
             } else {
-                movePossible.add(newPos);
+                if(board.get(newPos).getColor().equals(this.getColor())){
+                    movePossible.add(newPos);
+                }
                 break;
             }
         }
@@ -62,7 +68,9 @@ public class Tower extends Piece{
             if (!board.containsKey(newPos)) {
                 movePossible.add(newPos);
             } else {
-                movePossible.add(newPos);
+                if(board.get(newPos).getColor().equals(this.getColor())){
+                    movePossible.add(newPos);
+                }
                 break;
             }
         }
