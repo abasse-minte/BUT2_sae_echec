@@ -1,6 +1,8 @@
 package src.Piece;
 
-public abstract class Piece implements IPiece{
+import src.Board.IPiece;
+
+public abstract class Piece implements IPiece {
 
     public String nom;
     public String position;

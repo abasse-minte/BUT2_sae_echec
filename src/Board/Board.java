@@ -1,13 +1,11 @@
 package src.Board;
 
-import src.Piece.IPiece;
-
 import java.util.*;
 
 public class Board {
     public static final int taille = 8;
     public static final String[] index = {"A","B","C","D","E","F","G","H"};
-    public Map<String, IPiece> board = new LinkedHashMap<>();
+    private Map<String, IPiece> board = new LinkedHashMap<>();
 
 
     public Board() {
@@ -20,9 +18,17 @@ public class Board {
         }
     }
 
+    public Map<String, IPiece> getBoard() {
+        return board;
+    }
+
+
     public void setPiece(String position, IPiece piece){
         board.put(position, piece);
     }
+
+    //à changer en cas ou le mode de jeu demande le nbr de piece capturee compte
+    public void removePiece(String position){ setPiece(position, null); }
 
     public List<String> mouvPossible(IPiece piece){
 

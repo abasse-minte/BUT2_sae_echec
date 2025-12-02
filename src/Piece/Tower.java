@@ -1,13 +1,10 @@
 package src.Piece;
 
+import src.Board.IPiece;
+
 import java.util.*;
 
 public class Tower extends Piece{
-
-    public String nom;
-    public String position;
-    public String color;
-
 
     public Tower(String position, String color){
         super("rook",position,color);

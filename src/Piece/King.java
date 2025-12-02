@@ -1,13 +1,10 @@
 package src.Piece;
 
+import src.Board.IPiece;
+
 import java.util.*;
 
 public class King extends Piece {
-
-    public String nom;
-    public String position;
-    public String color;
-
 
     public King(String position, String color){
         super("king",position,color);

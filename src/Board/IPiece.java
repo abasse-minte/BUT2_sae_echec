@@ -1,4 +1,4 @@
-package src.Piece;
+package src.Board;
 import java.util.*;
 
 public interface IPiece {
