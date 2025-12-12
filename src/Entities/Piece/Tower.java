@@ -1,10 +1,10 @@
-package src.Piece;
+package src.Entities.Piece;
 
-import src.Board.IPiece;
+import src.Entities.Board.IPiece;
 
 import java.util.*;
 
-public class Tower extends Piece{
+public class Tower extends Piece {
 
     public Tower(String position, String color){
         super("rook",position,color);
