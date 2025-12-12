@@ -12,7 +12,7 @@ public class Board {
 
     public Board() { // initialiser un board vide
         for (int i = 0; i < Case.taille; i++) { // taille horizontale
-            for (int j = 0; j < Case.taille; j++) { // taille verticale
+            for (int j = 1; j < Case.taille; j++) { // taille verticale
                 board.put(new Case(Case.index[i],j),null);
             }
         }

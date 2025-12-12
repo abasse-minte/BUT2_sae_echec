@@ -1,76 +1,73 @@
 package src.entities.pieces;
 
+import src.entities.jeu.Case;
 import src.entities.jeu.IPiece;
 
 import java.util.*;
 
 public class Tower extends Piece {
 
-    public Tower(String position, String color){
+    public Tower(Case position, String color){
         super("rook",position,color);
     }
 
     @Override
-    public List<String> getMove(Map<String, IPiece> board) {
+    public List<Case> getMove(Map<Case, IPiece> board) {
 
-        String pos = this.position;
-        char lettre = pos.charAt(0);  // colonne A-H
-        char chiffre = pos.charAt(1); // ligne 1-8
+        Case pos = this.getPosition();
+        char lettre = pos.getX();  // colonne A-H
+        int chiffre = pos.getY(); // ligne 1-8
 
-        List<String> movePossible = new ArrayList<>();
+        List<Case> movePossible = new ArrayList<>();
 
         // vertical haut
-        for (char i = (char)(chiffre + 1); i <= '8'; i++) {
-            String newPos = "" + lettre + i;
+        for (int i = chiffre + 1; i <= 8; i++) {
 
-            if (!board.containsKey(newPos)) {  //contenir une piece? si ya rien alors case possible
-                movePossible.add(newPos);
+            Case case_tmp = new Case(lettre,i);
+
+            if (!board.containsKey(case_tmp)) {  //contenir une piece? si ya rien alors case possible
+                movePossible.add(case_tmp);
             } else {
-                if(!board.get(newPos).getColor().equals(this.getColor())){
-                    movePossible.add(newPos); // capture possible si c'est une piece de couleur different
-                }
-                break;                      // stoppe le rayon
+                movePossible.add(case_tmp);
+                break;
             }
         }
 
         // vertical bas
-        for (char i = (char)(chiffre - 1); i >= '1'; i--) {
-            String newPos = "" + lettre + i;
+        for (int i = chiffre - 1; i >= 1; i--) {
 
-            if (!board.containsKey(newPos)) {
-                movePossible.add(newPos);
+            Case case_tmp = new Case(lettre,i);
+
+            if (!board.containsKey(case_tmp )) {
+                movePossible.add(case_tmp );
             } else {
-                if(!board.get(newPos).getColor().equals(this.getColor())){
-                    movePossible.add(newPos);
-                }
+                movePossible.add(case_tmp );
                 break;
             }
         }
 
         // horizontal droit
         for (char i = (char)(lettre + 1); i <= 'H'; i++) {
-            String newPos = "" + i + chiffre;
 
-            if (!board.containsKey(newPos)) {
-                movePossible.add(newPos);
+            Case case_tmp = new Case(i,chiffre);
+
+            if (!board.containsKey(case_tmp)) {
+                movePossible.add(case_tmp);
             } else {
-                if(!board.get(newPos).getColor().equals(this.getColor())){
-                    movePossible.add(newPos);
-                }
+                movePossible.add(case_tmp);
                 break;
             }
         }
 
         // horizontal gauche
         for (char i = (char)(lettre - 1); i >= 'A'; i--) {
-            String newPos = "" + i + chiffre;
 
-            if (!board.containsKey(newPos)) {
-                movePossible.add(newPos);
+            Case case_tmp = new Case(i,chiffre);
+
+            if (!board.containsKey(case_tmp)) {
+                movePossible.add(case_tmp);
             } else {
-                if(!board.get(newPos).getColor().equals(this.getColor())){
-                    movePossible.add(newPos);
-                }
+                movePossible.add(case_tmp);
                 break;
             }
         }
